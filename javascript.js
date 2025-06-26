@@ -14,7 +14,7 @@ function getComputerChoice(){
 
 console.log(getComputerChoice());
 
-function getHumanChoice()
+function getHumanChoice(){}
 
 const signButton = document.querySelector("#signButton");
 const log = document.querySelector("#log");
