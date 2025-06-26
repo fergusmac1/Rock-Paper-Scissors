@@ -14,6 +14,8 @@ function getComputerChoice(){
 
 console.log(getComputerChoice());
 
+function getHumanChoice()
+
 const signButton = document.querySelector("#signButton");
 const log = document.querySelector("#log");
 
@@ -21,13 +23,9 @@ signButton.addEventListener("click", () => {
   let sign = prompt("Rock, Paper, Scissors?");
 
   if (sign === null) {
-    log.innerText = "OK, maybe next time.";
-  } else if (sign.toLowerCase() === "") {
-    log.innerText = "Enter your choice!";
-  } else if (sign.toLowerCase() === "scorpio") {
-    log.innerText = "Wow! I'm a Scorpio too!";
-  } else {
-    log.innerText = `${sign}`;
+    console.log("OK, maybe next time.");
+  }  else {
+    console.log(`${sign}!`);
   }
 });
 
