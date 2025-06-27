@@ -29,4 +29,10 @@ signButton.addEventListener("click", () => {
   }
 });
 
+let humanScore = 0
 
+let computerScore = 0
+
+function playRound(humanChoice, computerChoice){
+
+}
