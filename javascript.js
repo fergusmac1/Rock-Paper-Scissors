@@ -14,7 +14,7 @@ function getComputerChoice(){
 
 console.log(getComputerChoice());
 
-function getHumanChoice(){}
+function getHumanChoice(){
 
 const signButton = document.querySelector("#signButton");
 const log = document.querySelector("#log");
@@ -25,9 +25,13 @@ signButton.addEventListener("click", () => {
   if (sign === null) {
     console.log("OK, maybe next time.");
   }  else {
-    console.log(`${sign}!`);
+    console.log(`${sign}!`.toLowerCase());
   }
 });
+
+}
+
+console.log(getHumanChoice());
 
 let humanScore = 0
 
