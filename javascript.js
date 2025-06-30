@@ -1,3 +1,7 @@
+let humanScore = 0
+let computerScore = 0
+
+
 function getComputerChoice(){
      const randomNumber = Math.floor(Math.random() * 3);
      let choice;
@@ -33,10 +37,32 @@ signButton.addEventListener("click", () => {
 
 console.log(getHumanChoice());
 
-let humanScore = 0
-
-let computerScore = 0
 
 function playRound(humanChoice, computerChoice){
 
+     if (humanChoice === 'rock' && computerChoice === 'rock'){
+          return 'You tied!'
+     } else if(humanChoice === 'scissors' && computerChoice === 'scissors'){
+          return 'You tied!'
+     } else if(humanChoice === 'paper' && computerChoice === 'paper'){
+          return 'You tied!'
+     } else if(humanChoice === 'rock' && computerChoice === 'scissors'){
+          return 'You win!'
+     } else if(humanChoice === 'paper' && computerChoice === 'rock'){
+          return 'You win!'
+     } else if(humanChoice === 'scissors' && computerChoice === 'paper'){
+          return 'You win!'
+     } else if(humanChoice === 'scissors' && computerChoice === 'rock'){
+          return 'You lose!'
+     } else if(humanChoice === 'paper' && computerChoice === 'scissors'){
+          return 'You lose!'
+     } else if(humanChoice === 'rock' && computerChoice === 'paper'){
+          return 'You lose!'
+     }
+
 }
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
