@@ -1,74 +1,67 @@
-let humanScore = 0
-let computerScore = 0
 
+function getComputerChoice() { 
+ let num1 = Math.floor(Math.random() * 3);
+ if (num1 = 0) {
+ return "ROCK";
+            }else if (num1 = 1) {
+ return "PAPER";
+            }else if(num1 = 2) {
+ return "SCISSORS";
+            }
+        }
+ 
+ function getPlayerChoice() { 
+ const ask = prompt("Rock, Paper, or Scissors?").toUpperCase();
+ return ask;
+ 
+        }
 
-function getComputerChoice(){
-     const randomNumber = Math.floor(Math.random() * 3);
-     let choice;
-     if(randomNumber === 0){
-          choice = 'rock';
-     } else if (randomNumber === 1){
-          choice = 'paper';
-     } else {
-          choice = 'scissors';
-     }
-     return choice
-     
-}
+ function singleRound(playerSelection, computerSelection) { 
+ if (playerSelection === computerSelection) {
+ return "tie";
+ 
+            } else if (playerSelection === "SCISSORS" && computerSelection === "PAPER") {
+ return "player";
+            } else if (playerSelection === "ROCK" && computerSelection === "SCISSORS") {
+ return "player";
+            } else if (playerSelection === "PAPER" && computerSelection === "ROCK") {
+ return "player";
+ 
+            } else if (playerSelection === "PAPER" && computerSelection === "SCISSORS") {
+ return "computer";
+            } else if (playerSelection === "ROCK" && computerSelection === "PAPER") {
+ return "computer";
+            } else if (playerSelection === "SCISSORS" && computerSelection === "ROCK") {
+ return "computer";
+            }
 
-console.log(getComputerChoice());
+        };
 
-function getHumanChoice(){
+ const playerSelection = getPlayerChoice();
+ const computerSelection = getComputerChoice();
 
-const signButton = document.querySelector("#signButton");
-const log = document.querySelector("#log");
+ let playerScore = 0
+ let computerScore = 0
 
-signButton.addEventListener("click", () => {
-  let sign = prompt("Rock, Paper, Scissors?");
+ function game() {        
+ 
+ let result = singleRound(playerSelection, computerSelection);
 
-  if (sign === null) {
-    console.log("OK, maybe next time.");
-  }  else {
-    console.log(`${sign}!`.toLowerCase());
-  }
-});
+ if (result === "player") {
+                playerScore++;
+                console.log("You won this round, you have " + playerScore + " points. Computer has " + computerScore + " points.");  
+            } else if (result === "tie") {
+                console.log("You both picked the same option, try again!");
+            } else if (result === "computer") {
+                computerScore++;
+                console.log("Computer won this round, you have " + playerScore + " points. Computer has " + computerScore + " points.");
+            }
+ 
+ if (computerScore === 5) {
+                console.log("Game over, computer won!");
+            } else if (playerScore === 5) {
+                console.log("Game over, you won!");
+            }          
+        }
 
-}
-
-console.log(getHumanChoice());
-
-
-function playRound(humanChoice, computerChoice){
-
-     if (humanChoice === 'rock' && computerChoice === 'rock'){
-          console.log('You tied!')
-     } else if(humanChoice === 'scissors' && computerChoice === 'scissors'){
-          return 'You tied!'
-     } else if(humanChoice === 'paper' && computerChoice === 'paper'){
-          return 'You tied!'
-     } else if(humanChoice === 'rock' && computerChoice === 'scissors'){
-          return 'You win!'
-     } else if(humanChoice === 'paper' && computerChoice === 'rock'){
-          return 'You win!'
-     } else if(humanChoice === 'scissors' && computerChoice === 'paper'){
-          return 'You win!'
-     } else if(humanChoice === 'scissors' && computerChoice === 'rock'){
-          return 'You lose!'
-     } else if(humanChoice === 'paper' && computerChoice === 'scissors'){
-          return 'You lose!'
-     } else if(humanChoice === 'rock' && computerChoice === 'paper'){
-          return 'You lose!'
-     }
-
-}
-
-const computerSelection = getComputerChoice()
-const humanSelection = getHumanChoice();
-
-function game(){
-     for(let i = 0; i < 0; i++){
-          console.log(playRound(humanSelection, computerSelection))
-     }
-}
-
-playRound(humanSelection, computerSelection);
+    game()
