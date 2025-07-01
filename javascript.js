@@ -41,7 +41,7 @@ console.log(getHumanChoice());
 function playRound(humanChoice, computerChoice){
 
      if (humanChoice === 'rock' && computerChoice === 'rock'){
-          return 'You tied!'
+          console.log('You tied!')
      } else if(humanChoice === 'scissors' && computerChoice === 'scissors'){
           return 'You tied!'
      } else if(humanChoice === 'paper' && computerChoice === 'paper'){
@@ -62,7 +62,13 @@ function playRound(humanChoice, computerChoice){
 
 }
 
+const computerSelection = getComputerChoice()
 const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+
+function game(){
+     for(let i = 0; i < 0; i++){
+          console.log(playRound(humanSelection, computerSelection))
+     }
+}
 
 playRound(humanSelection, computerSelection);
