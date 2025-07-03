@@ -1,12 +1,12 @@
 
 //function returns one of three choices for the computer
 function getComputerChoice() { 
- let num1 = Math.floor(Math.random() * 3);
- if (num1 = 0) {
+ let choice = Math.floor(Math.random() * 3);
+ if (choice = 0) {
  return "ROCK";
-            }else if (num1 = 1) {
+            }else if (choice = 1) {
  return "PAPER";
-            }else if(num1 = 2) {
+            }else if(choice = 2) {
  return "SCISSORS";
             }
         }
@@ -49,10 +49,8 @@ function getComputerChoice() {
  let computerScore = 0
 
  function game() {  
-    
+
     for(let i = 0; i < 5; i++){
-        singleRound(playerSelection, computerSelection)
-    }
  
  let result = singleRound(playerSelection, computerSelection);
 
@@ -71,6 +69,6 @@ function getComputerChoice() {
             } else if (playerScore === 5) {
                 console.log("Game over, you won!");
             }          
-        }
+        }}
 
     game()
