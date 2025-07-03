@@ -1,4 +1,5 @@
 
+//function returns one of three choices for the computer
 function getComputerChoice() { 
  let num1 = Math.floor(Math.random() * 3);
  if (num1 = 0) {
@@ -10,12 +11,16 @@ function getComputerChoice() {
             }
         }
  
+
+//gives a prompt for the player to pick an option
  function getPlayerChoice() { 
  const ask = prompt("Rock, Paper, or Scissors?").toUpperCase();
  return ask;
  
         }
 
+
+//determines the result based on the players and computers choice
  function singleRound(playerSelection, computerSelection) { 
  if (playerSelection === computerSelection) {
  return "tie";
