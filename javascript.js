@@ -43,7 +43,11 @@ function getComputerChoice() {
  let playerScore = 0
  let computerScore = 0
 
- function game() {        
+ function game() {  
+    
+    for(let i = 0; i < 5; i++){
+        singleRound(playerSelection, computerSelection)
+    }
  
  let result = singleRound(playerSelection, computerSelection);
 
