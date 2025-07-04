@@ -2,42 +2,43 @@
 //function returns one of three choices for the computer
 function getComputerChoice() { 
  let choice = Math.floor(Math.random() * 3);
- if (choice = 0) {
- return "ROCK";
-            }else if (choice = 1) {
- return "PAPER";
-            }else if(choice = 2) {
- return "SCISSORS";
+ if (choice == 0) {
+ return "rock";
+            }else if (choice == 1) {
+ return "paper";
+            }else if(choice == 2) {
+ return "scissors";
             }
         }
+
+        
  
 
 //gives a prompt for the player to pick an option
  function getPlayerChoice() { 
- const ask = prompt("Rock, Paper, or Scissors?").toUpperCase();
+ const ask = prompt("Rock, Paper, or Scissors?").toLowerCase();
  return ask;
- 
         }
 
 
 //determines the result based on the players and computers choice
  function singleRound(playerSelection, computerSelection) { 
- if (playerSelection === computerSelection) {
- return "tie";
  
-            } else if (playerSelection === "SCISSORS" && computerSelection === "PAPER") {
+    if (playerSelection === "scissors" && computerSelection === "paper") {
  return "player";
-            } else if (playerSelection === "ROCK" && computerSelection === "SCISSORS") {
+            } else if (playerSelection === "rock" && computerSelection === "scissors") {
  return "player";
-            } else if (playerSelection === "PAPER" && computerSelection === "ROCK") {
+            } else if (playerSelection === "paper" && computerSelection === "rock") {
  return "player";
  
-            } else if (playerSelection === "PAPER" && computerSelection === "SCISSORS") {
+            } else if (playerSelection === "paper" && computerSelection === "scissors") {
  return "computer";
-            } else if (playerSelection === "ROCK" && computerSelection === "PAPER") {
+            } else if (playerSelection === "rock" && computerSelection === "paper") {
  return "computer";
-            } else if (playerSelection === "SCISSORS" && computerSelection === "ROCK") {
+            } else if (playerSelection === "scissors" && computerSelection === "rock") {
  return "computer";
+            } else{
+                return "tie";
             }
 
         };
@@ -58,7 +59,7 @@ function getComputerChoice() {
                 playerScore++;
                 console.log("You won this round, you have " + playerScore + " points. Computer has " + computerScore + " points.");  
             } else if (result === "tie") {
-                console.log("You both picked the same option, try again!");
+                console.log("Tie!");
             } else if (result === "computer") {
                 computerScore++;
                 console.log("Computer won this round, you have " + playerScore + " points. Computer has " + computerScore + " points.");
@@ -70,5 +71,7 @@ function getComputerChoice() {
                 console.log("Game over, you won!");
             }          
         }}
+
+        
 
     game()
